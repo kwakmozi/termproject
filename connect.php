@@ -20,15 +20,13 @@ echo 'Hello!!';
     echo "Connected successfully (".$db->host_info.")";
     
     $sql = "INSERT INTO dep (dept_no, dept_name)
-    VALUES (1, 'database1')";
+    VALUES (3, 'database3')";
     
     if($db->query($sql) === TRUE ) {
         echo "New record created successfully";
     } else { 
         echo "Error: " . $sql . "<br>" . $db->error;
     }
-    
     $db->close();
-    
     ?>
     
