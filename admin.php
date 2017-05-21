@@ -25,14 +25,37 @@
     $userid = $_SESSION['id'];
     }
     ?>
-<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 
-</head>
 <header>
     <a><h1>INTERIOR ITEM SHOP</h1></a>
-    <div>
+    <div><head>
+    <meta charset="utf-8"/>
+       <link rel="stylesheet" type="text/css" href="css/style.css"/>
+<style>
+.ct-btn.large {
+	width: 600px;
+	height: 46px;
+	padding: 0 1em;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 46px;
+}
+  fieldset{
+    margin-bottom:15px;
+  }
+  ul {
+    list-style:none;
+  }
+  ul li {
+    margin-bottom:5px;
+  }
+  ul li>label {
+     width:150px;
+     float:left;
+  }
+</style>
+</head>
+
         <nav id="topMenu">
             <ul>
                 <?php
@@ -41,19 +64,19 @@
                 {?>
 
                     <li><a class="menuLink" href="logout.php" style="width:600px">LOGOUT</a></li>
-
+                    <li><a class="menuLink" href="admin/userinfo.php">userinfo</a></li>
+                    <li><a class="menuLink" href="admin/productinfo.php">productinfo</a></li>
+                    <li><a class="menuLink" href="admin/orderinfo.php">orderinfo</a></li>
+                
                     <?php
                 }
                 else  //세션이 형성안됐으면,
                 {?>
                     <li><a class="menuLink" href="login.php">LOGIN</a></li>
-                    <li><a class="menuLink" href="join.php">JOIN</a></li>
                 <?php
                 }
                 ?>
                 
-                <li><a class="menuLink" href="cart.php">SHOPPING CART</a></li>
-                <li><a class="menuLink" href="mypage.php">MY PAGE</a></li>
                 <!--<li><a class="menuLink" href="info.php">INFO</a></li>-->
             </ul>
         </nav>

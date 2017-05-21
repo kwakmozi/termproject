@@ -16,7 +16,7 @@ include 'header.php';
 			<ul class='showitem'>
 
 				<?php
-                $query = "SELECT * FROM item";
+                $query = "SELECT * FROM product";
                 $result = mysqli_query($db,$query);
                 while ($row = mysqli_fetch_row($result))
                 {	?>
@@ -24,7 +24,7 @@ include 'header.php';
 
 					<li id = '#' class='#' >
 					<div class='box' >
-						<a href = 'detail.php?item_id=<?=$row[0];?>' >
+						<a href = 'product_detail.php?item_id=<?=$row[0];?>' >
 							<img src = 'img/<?=$row[0];?>.jpg' />
 						</a>
 							<p style = 'color: #555555;' > <?=$row[1]; ?></p >

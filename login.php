@@ -44,9 +44,12 @@ if(!isset($_SESSION['id'])) { //session이 없으면 계속 로그인 하게끔 
   //  echo "<meta http-equiv='refresh' content='0;url=login.php'>";
   //  exit;
 }
+//왜 바로 admin page로 넘어갈까..
+
 else {  
-    echo "<meta http-equiv='refresh' content='0;url=index.php'>";
-}
+        echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+    }
+
 ?>
 
 
