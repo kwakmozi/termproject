@@ -3,4 +3,4 @@ session_start();
 
 session_destroy();
 ?>
-<meta http-equiv='refresh' content='3;url=index.php'>
+<meta http-equiv='refresh' content='1;url=index.php'>

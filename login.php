@@ -6,25 +6,27 @@
     <meta name="description" content="kwakinmo" />
     <meta name="author" content="anthlife79@gmail.com" />
     <title>interior item shoppingmall</title>
-   <!-- <link rel="stylesheet" type="text/css" href="css/style.css"/> -->
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 </head>
 <body>
 
 <?php
 include 'header.php';
-session_start();
+//session_start();
 
 $id = $_POST['id'];
 $pw = $_POST['password']; 
-$query = "select count(*),id from user where id = '$id' and pw = '$pw'";
+$query = "select id from user where id = '$id' and pw = '$pw'";
 $result = mysqli_query($db, $query);
 
 $login=mysqli_fetch_row($result);
-if($login[0]=='1')
+
+if($login[0] != null )
 {
-    $_SESSION['id']=$login[1];
+    $_SESSION['id']=$login[0]; // session id로는 내 아이디를 이용.
 }
+
 if(!isset($_SESSION['id'])) { //session이 없으면 계속 로그인 하게끔 만듬.
 
 ?>
@@ -41,19 +43,15 @@ if(!isset($_SESSION['id'])) { //session이 없으면 계속 로그인 하게끔 
 
 </section>
 <?php
-  //  echo "<meta http-equiv='refresh' content='0;url=login.php'>";
-  //  exit;
 }
-//왜 바로 admin page로 넘어갈까..
 
-else {  
+else{
+    if(strstr($_SESSION['id'],'admin'))
+        echo "<meta http-equiv='refresh' content='0;url=admin.php'>";
+    else
         echo "<meta http-equiv='refresh' content='0;url=index.php'>";
-    }
+}
 
 ?>
-
-
-
 </body>
-
 </html>

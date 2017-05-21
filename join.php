@@ -28,6 +28,7 @@
 </style>
 </head>
 <body>
+
   <?php
    include 'header.php'
    ?>
@@ -55,11 +56,11 @@
 		<ul>
 		  <li>
 			<label for="itemName">이름</label>
-			<input type="text" id="userName" size="20" name="member_name">
+			<input type="text" id="userName" size="20" name="username">
 		  </li>
 		  <li>
 			<label for="amount">휴대폰번호</label>
-			<input type="text" id="userPhoneNum" size="20" name="phoneNo">
+			<input type="text" id="userPhoneNum" size="20" name="phone">
 		  </li>
 		  <li>
 			<label for="amount">주소</label>

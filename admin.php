@@ -1,5 +1,5 @@
-<?php  // 디비를 가져온다. 
-    
+<?php  // 디비를 가져온다.
+
     $servername = getenv('IP');
     $username = getenv('C9_USER');
     $password = "";
@@ -8,22 +8,16 @@
 
     // Create connection
     $db = new mysqli($servername, $username, $password, $database, $dbport);
-
-    // Check connection
-    if ($db->connect_error) {
-        die("Connection failed: " . $db->connect_error);
-    } 
     
-    //echo "Connected successfully (".$db->host_info.")";
-
-    mysqli_set_charset($db,"utf8");
-   
     //session
     session_start(); 
+    
+       
+    mysqli_set_charset($db,"utf8");
    
-    if(isset($_SESSION['id'])) {  // 세션을 userid로 확인
-    $userid = $_SESSION['id'];
-    }
+ //   if(isset($_SESSION['id'])) {  // 세션을 userid로 확인
+ //   $userid = $_SESSION['id'];
+ //   }
     ?>
 
 <header>
@@ -63,9 +57,9 @@
                 if(isset($_SESSION['id']))  // 세션이 형성됐으면, 
                 {?>
 
-                    <li><a class="menuLink" href="logout.php" style="width:600px">LOGOUT</a></li>
-                    <li><a class="menuLink" href="admin/userinfo.php">userinfo</a></li>
-                    <li><a class="menuLink" href="admin/productinfo.php">productinfo</a></li>
+                    <li><a class="menuLink" href="logout.php">LOGOUT</a></li>
+                    <li><a class="menuLink" href="admin_userinfo.php">userinfo</a></li>
+                    <li><a class="menuLink" href="admin_productinfo.php">productinfo</a></li>
                     <li><a class="menuLink" href="admin/orderinfo.php">orderinfo</a></li>
                 
                     <?php

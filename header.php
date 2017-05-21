@@ -8,7 +8,7 @@
 
     // Create connection
     $db = new mysqli($servername, $username, $password, $database, $dbport);
-
+    
     // Check connection
     if ($db->connect_error) {
         die("Connection failed: " . $db->connect_error);
@@ -21,15 +21,11 @@
     //session
     session_start(); 
    
-    if(isset($_SESSION['id'])) {  // 세션을 userid로 확인
-    $userid = $_SESSION['id'];
+    if(isset($_SESSION['id'])) {  // session_id를 이용해 쿠키를 활용.
+    $session_id = $_SESSION['id'];
     }
     ?>
-<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 
-</head>
 <header>
     <a><h1>INTERIOR ITEM SHOP</h1></a>
     <div>
@@ -40,7 +36,7 @@
                 if(isset($_SESSION['id']))  // 세션이 형성됐으면, 
                 {?>
 
-                    <li><a class="menuLink" href="logout.php" style="width:600px">LOGOUT</a></li>
+                    <li><a class="menuLink" href="logout.php" style="width:400px">LOGOUT</a></li>
 
                     <?php
                 }
