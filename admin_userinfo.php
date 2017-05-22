@@ -21,7 +21,8 @@ include 'admin.php';
                 $result = mysqli_query($db,$query);
                 
                 while ($row = mysqli_fetch_row($result))
-                {   // 나중에 표로 바꾸자  ?>
+                { // 나중에 테이블로 바꾸자.   
+                 ?>
 					<p style = 'color: #555555;' > userID : <?=$row[0]; ?> userName : <?=$row[3]; ?> userPhone : <?=$row[2]; ?> userAddress : <?=$row[4]; ?></p>
                     
                 <?php 

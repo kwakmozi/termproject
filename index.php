@@ -27,15 +27,14 @@ include 'header.php';
 					<li id = '#' class='#' >
 					<div class='box' >
 						<a><img src = 'img/<?=$row[0];?>.jpg' /></a>
-						<p style = 'color: #555555;' > <?=$row[1]; ?> <strong><?=number_format($row[2]); ?></strong >원</p >
-						
-                        // input 한 값이 아니라 이 기존의 값(상품 id 등등)을 넘기려면 어떻게 해야하나????
-                        <form method="post" action="cart.php">
-                            <input type='submit' value='ADD TO CART' onclick='Submit(1)'>
-                        </form>
-                        <form method="post" action="order.php">
-                            <input type='submit' value=' BUY IT NOW ' onclick='Submit(2)'>
-                        </form>
+						<p style = 'color: #555555;' > <?=$row[1]; ?> <strong><?=number_format($row[2]); ?></strong >원</p>
+                <a href = 'order?product_id=<?=$row[0];?>.php'>
+                    <input type="submit" class="ct-btn white large" value="주문">
+                </a>
+                <a href = 'cart?product_id=<?=$row[0];?>.php'>
+                    <input type="submit" class="ct-btn white large" value="담기">
+                </a>
+                        
 					</div >
 				</li >
 

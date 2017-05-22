@@ -22,8 +22,22 @@ include 'admin.php';
 
 
 <section>
+			
 			<ul class='showitem'>
-
+				<a href = 'admin_updateproduct.php'>
+                    <input type="submit" class="ct-btn white large" value="수정">
+                </a>
+                </br>
+                <a href = 'admin_insertproduct.php'>
+                    <input type="submit" class="ct-btn white large" value="추가">
+                </a>
+                </br>
+                <a href = 'admin_deleteproduct.php'>
+                    <input type="submit" class="ct-btn white large" value="삭제">
+                </a>
+                </br>
+                
+                
 				<?php
                 $query = "select * from product";
                 $result = mysqli_query($db,$query);
@@ -35,9 +49,10 @@ include 'admin.php';
 					<div class='box' >
 						<a><img src = 'img/<?=$row[0];?>.jpg' /></a>
 						<p style = 'color: #555555;' > <?=$row[1]; ?> <strong><?=number_format($row[2]); ?></strong >원</p >
+						
 					</div >
 				</li >
-
+			
 				<?php }//end of while
 					?>
 
