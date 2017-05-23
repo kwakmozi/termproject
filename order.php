@@ -7,29 +7,59 @@
 </head>
 
 <body>
-<?php
-include 'header.php';
-?>
 
 <?php
+include 'header.php';
+session_start();
+
 
 $product_id = $_GET['product_id'];
 
-$query = "select * from product where product_id = $product_id ";
-$result = mysqli_query($db, $query);
-$row = mysqli_fetch_row($result);
+$query1 = "select * from product where product_id = $product_id ";
+$result1 = mysqli_query($db, $query1);
+$row1 = mysqli_fetch_row($result1);
+//$product_name = $row1[1];
+//$price = $row1[2];
 
-//session id 까지 보내야할 듯.
-//어떻게 order 에 넣지?? ordernow 참조해야할듯.
-// 주문 되었습니다 창 띄우기
-// 화면은 mypage로 이동해서 주문 정보 보여주기
-// order list에 정보 넣기
-$product_id = $row[0];
-$member_name=$_POST["member_name"];
-$phoneNo=$_POST["phoneNo"];
-$address=$_POST["address"];
+$afterstock = $row1[3] - 1;
 
-$query="insert into order (tid,pw,tel,name,address) values ('$userid','$password','$phoneNo','$member_name','$address')";
+$querystock = "update product set stock=$afterstock where product_id= $product_id"; 
+$result = mysqli_query($db, $querystock);
+
+$id = $_SESSION['id'];
+
+if(!isset($_SESSION['id'])) {
+
+?>
+
+<script language=javascript>
+alert('Login이 필요합니다..');
+</script>
+<meta http-equiv='refresh' content='0;url=login.php'>
+<?php
+exit;
+}
+
+function error($message) {
+ echo"<script language=javascript>
+ alert('$message');
+ history.go(-1);
+ </script>";
+ exit;
+}
+
+$date = date("Y-m-d");
+
+//$query2 = "select * from user where id = '$id'";
+//$result2 = mysqli_query($db, $query2);
+//$row2 = mysqli_fetch_row($result2);
+//$phoneNo = $row2[2];
+//$user_name = $row2[3];
+//$address = $row2[4];
+
+// ordered에 정보 넣기
+//$query="insert into orderlist (user_id, user_name, phoneNo, address, product_id, product_name, price, date) values ('$id', '$user_name','$phoneNo','$address','$product_id','$product_name', '$price','$date')";
+$query = "insert into ordered (user_id, product_id, date) values ('$id', '$product_id', '$date')";
 mysqli_query($db,$query);
 
 ?>
@@ -38,6 +68,6 @@ mysqli_query($db,$query);
 alert('주문되셨습니다');
 </script>
 
-<meta http-equiv='refresh' content='3;url=login.php'>
+<meta http-equiv='refresh' content='0;url=index.php'>
 </body>
 </html>
