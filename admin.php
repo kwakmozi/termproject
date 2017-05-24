@@ -21,7 +21,7 @@
     ?>
 
 <header>
-    <a><h1>INTERIOR ITEM SHOP</h1></a>
+    <a href=admin.php><h1>INTERIOR ITEM SHOP</h1></a>
     <div><head>
     <meta charset="utf-8"/>
        <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -60,7 +60,7 @@
                     <li><a class="menuLink" href="logout.php">LOGOUT</a></li>
                     <li><a class="menuLink" href="admin_userinfo.php">userinfo</a></li>
                     <li><a class="menuLink" href="admin_productinfo.php">productinfo</a></li>
-                    <li><a class="menuLink" href="admin/orderinfo.php">orderinfo</a></li>
+                    <li><a class="menuLink" href="admin_orderinfo.php">orderinfo</a></li>
                 
                     <?php
                 }

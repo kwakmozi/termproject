@@ -27,7 +27,7 @@
     ?>
 
 <header>
-    <a><h1>INTERIOR ITEM SHOP</h1></a>
+    <a href = index.php><h1>INTERIOR ITEM SHOP</h1></a>
     <div>
         <nav id="topMenu">
             <ul>

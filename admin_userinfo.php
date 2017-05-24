@@ -14,21 +14,39 @@ include 'admin.php';
 ?>
 
 <section>
-			<ul class='showuser'>
+<h1 align="center">고객정보</h1><br/>
+<center>
+	<table border="1px" width="800px">
+		<tr>
+		<td align="center" width="20px"></td>
+		<td align="center" width="200px">고객아이디</td>
+		<td align="center" width="150px">고객이름</td>
+		<td align="center" width="200px">고객전화번호</td>
+		<td align="center" width="150px">고객주소</td>
+		</tr>			<ul class='showuser'>
 			    
 				<?php
                 $query = "select * from user";
                 $result = mysqli_query($db,$query);
                 
                 while ($row = mysqli_fetch_row($result))
-                { // 나중에 테이블로 바꾸자.   
+                { 
                  ?>
-					<p style = 'color: #555555;' > userID : <?=$row[0]; ?> userName : <?=$row[3]; ?> userPhone : <?=$row[2]; ?> userAddress : <?=$row[4]; ?></p>
-                    
+                 <tr>
+		<td align="center" width="20px"></td>
+		<td align="center" width="200px"><?=$row[0]; ?></td>
+		<td align="center" width="150px"><?=$row[3]; ?></td>
+		<td align="center" width="200px"><?=$row[2]; ?></td>
+		<td align="center" width="150px"><?=$row[4]; ?></td>
+	            </tr>
+    
                 <?php 
                 }//end of while
 			    ?>    
 			</ul>
+			
+			</table>
+			    </center>
 </section>
 
 

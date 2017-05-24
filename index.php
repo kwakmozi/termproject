@@ -11,15 +11,30 @@
 
 <?php
 include 'header.php';
+// 가격별로 검색 기능만 넣자!!!
+// select * from product where price >= 50000;
+// select * from product where price <50000;
+
 ?>
 
-
 <section>
+
+<form name=search method=get action="<?=$PHP_SELF?>">
+<select name=field>
+<option value=product_name>상품명</option>   
+</select><input type=text name=search_word size=20><input type=submit value="검색">
+                
+                
 			<ul class='showitem'>
 
 				<?php
+                if ($_GET['search_word']!="") 
+                $add_query = " where $_GET[field] like '%" . $_GET['search_word'] . "%' ";
+				
                 $query = "select * from product";
+                $query .= $add_query;
                 $result = mysqli_query($db,$query);
+                
                 
                 while ($row = mysqli_fetch_row($result))
                 {	?>
@@ -38,7 +53,7 @@ include 'header.php';
 					</div >
 				</li >
 
-				<?php }//end of while
+				<?php }
 					?>
 
 			</ul>
@@ -47,16 +62,3 @@ include 'header.php';
 
 <? include 'footer.html'?>
 </body>
-<!--
-<script type="text/javascript">
-  function Submit(index) {
-    if (index == 1) {
-      document.Form.action='cart.php';
-    }
-    if (index == 2) {
-      document.Form.action='order.php';
-    }
-    document.Form.submit();
-  }
-</script>
--->

@@ -59,7 +59,7 @@ $date = date("Y-m-d");
 
 // ordered에 정보 넣기
 //$query="insert into orderlist (user_id, user_name, phoneNo, address, product_id, product_name, price, date) values ('$id', '$user_name','$phoneNo','$address','$product_id','$product_name', '$price','$date')";
-$query = "insert into ordered (user_id, product_id, date) values ('$id', '$product_id', '$date')";
+$query = "insert into ordered (id, product_id, date) values ('$id', '$product_id', '$date')";
 mysqli_query($db,$query);
 
 ?>
