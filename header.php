@@ -48,7 +48,7 @@
                 }
                 ?>
                 
-                <li><a class="menuLink" href="cart.php">SHOPPING CART</a></li>
+                <li><a class="menuLink" href="mycart.php">SHOPPING CART</a></li>
                 <li><a class="menuLink" href="mypage.php">MY PAGE</a></li>
                 <!--<li><a class="menuLink" href="info.php">INFO</a></li>-->
             </ul>

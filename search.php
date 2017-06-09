@@ -15,14 +15,21 @@ include 'header.php';
 
 <section>
 
-<a href = 'search.php'><input type="submit" class="ct-btn white large" value="상품검색"></a>
-            
+<form name=search method=get action="<?=$PHP_SELF?>">
+<select name=field>
+<option value=product_name>상품명</option>   
+</select><input type=text name=search_word size=20><input type=submit value="검색">
+                
 			<ul class='showitem'>
 
-        		<?php
+				<?php
+                if ($_GET['search_word']!="")
+                    $add_query = " where $_GET[field] like '%" . $_GET['search_word'] . "%' ";
+            
                 $query = "select * from product";
+                $query .= $add_query;
                 $result = mysqli_query($db,$query);
-
+                
                 
                 while ($row = mysqli_fetch_row($result))
                 {	?>
@@ -42,8 +49,7 @@ include 'header.php';
 				</li >
 
 				<?php }
-					?>
-
+				?>
 			</ul>
 
 

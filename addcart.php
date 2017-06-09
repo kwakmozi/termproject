@@ -46,17 +46,22 @@ function error($message) {
  exit;
 }
 
-$date = date("Y-m-d");
+// cart에 정보 넣기
 
-// ordered에 정보 넣기
-//$query="insert into orderlist (user_id, user_name, phoneNo, address, product_id, product_name, price, date) values ('$id', '$user_name','$phoneNo','$address','$product_id','$product_name', '$price','$date')";
 $query = "insert into cart (id, product_id) values ('$id','$product_id')";
-mysqli_query($db,$query);
+//transaction
+mysqli_query($db,"BEGIN");
+
+$result = mysqli_query($db,$query);
+if(!$result)
+    mysqli_query($db,"ROLLBACK");
+else 
+    mysqli_query($db,"COMMIT");
 
 ?>
 
 <script language=javascript>
-alert('장바구니에담았습니다');
+alert('장바구니에 담았습니다');
 </script>
 
 <meta http-equiv='refresh' content='0;url=index.php'>
