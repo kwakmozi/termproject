@@ -11,10 +11,6 @@
 
 <?php
 include 'header.php';
-// 가격별로 검색 기능만 넣자!!!
-// select * from product where price >= 50000;
-// select * from product where price <50000;
-
 ?>
 
 <section>
@@ -46,7 +42,7 @@ include 'header.php';
                 <a href = 'order.php?product_id=<?=$row[0];?>'>
                     <input type="submit" class="ct-btn white large" value="주문">
                 </a>
-                <a href = 'cart?product_id=<?=$row[0];?>.php'>
+                <a href = 'addcart.php?product_id=<?=$row[0];?>'>
                     <input type="submit" class="ct-btn white large" value="담기">
                 </a>
                         
