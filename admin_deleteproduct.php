@@ -58,7 +58,7 @@
 
 
 
-try {
+<!--try {
     // First of all, let's begin a transaction
     $db->query("START TRANSACTION");
 
@@ -74,5 +74,4 @@ try {
     // An exception has been thrown
     // We must rollback the transaction
     $db->rollback();
-}
-[출처] php transaction처리 방법|작성자 Claude
+}-->
