@@ -47,7 +47,7 @@
 			<input type="password" id="userPassword" size="20" name="password">
 		  </li>
 		  <li>
-			<label for="price">비밀번호 재확인</label>
+			<label for="amount">비밀번호 재확인</label>
 			<input type="password" id="userPasswordRe" size="20" name="password2">
 		  </li>
 		</ul>

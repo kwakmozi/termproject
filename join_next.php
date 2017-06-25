@@ -15,11 +15,11 @@ include 'header.php';
 $userid=$_POST["userid"];
 $password=$_POST["password"];
 $password2=$_POST["password2"];
-$member_name=$_POST["member_name"];
-$phoneNo=$_POST["phoneNo"];
+$username=$_POST["username"];
+$phone=$_POST["phone"];
 $address=$_POST["address"];
 
-$query="insert into user (id,pw,tel,name,address) values ('$userid','$password','$phoneNo','$member_name','$address')";
+$query="insert into user (id,pw,tel,name,address) values ('$userid','$password','$phone','$username','$address')";
 mysqli_query($db,$query);
 
 ?>
